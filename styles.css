@@ -69,6 +69,10 @@ button {
     margin-right: 8px;
 }
 
+.dark-theme .icon {
+    color: white;
+}
+
 /* Dashboard Layout */
 .dashboard-container {
     display: flex;
