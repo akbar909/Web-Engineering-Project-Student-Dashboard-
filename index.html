@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Dashboard</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active" data-page="dashboard"><a href="#"><span class="icon">📊</span> Dashboard</a></li>
+                    <li data-page="courses"><a href="#"><span class="icon">📚</span> My Courses</a></li>
+                    <li data-page="calendar"><a href="#"><span class="icon">📅</span> Calendar</a></li>
+                    <li data-page="notifications"><a href="#"><span class="icon">🔔</span> Notifications</a></li>
+                    <li data-page="settings"><a href="#"><span class="icon">⚙️</span> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle">
+                    <span class="icon">🌙</span> Dark Mode
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="mobile-toggle">
+                    <button id="sidebar-toggle">
+                        <span class="icon">☰</span>
+                    </button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search courses...">
+                    <button><span class="icon">🔍</span></button>
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <span class="icon">🔔</span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="profile-info">
+                        <img src="https://via.placeholder.com/40" alt="Profile Picture" id="profile-pic">
+                        <div class="user-name">22CS064</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="page-content" id="dashboard-page">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <h2>Welcome, Akbar!</h2>
+                    <p>You have completed 75% of your weekly goal.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                </section>
+
+                <!-- Course Progress Overview -->
+                <section class="progress-overview">
+                    <h3>Your Progress</h3>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-value">4</div>
+                            <div class="stat-label">Courses in Progress</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Completed Lessons</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Upcoming Quizzes</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-label">Average Score</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Two Column Layout for Courses and Activities -->
+                <div class="two-column-layout">
+                    <!-- Enrolled Courses -->
+                    <section class="enrolled-courses">
+                        <div class="section-header">
+                            <h3>Enrolled Courses</h3>
+                            <a href="#" class="view-all" data-navigate="courses">View All</a>
+                        </div>
+                        <div class="courses-container">
+                            <div class="course-card">
+                                <div class="course-image" style="background-color: #4CAF50;">
+                                    <span class="icon">💻</span>
+                                </div>
+                                <div class="course-details">
+                                    <h4>Web Development Fundamentals</h4>
+                                    <p>Instructor: Engr. Zaib Ul Nissa</p>
+                                    <div class="course-progress">
+                                        <div class="progress-text">Progress: 75%</div>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="continue-btn">Continue Learning</a>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-image" style="background-color: #2196F3;">
+                                    <span class="icon">📊</span>
+                                </div>
+                                <div class="course-details">
+                                    <h4>Data Science Essentials</h4>
+                                    <p>Instructor: Engr. Faiz Nadeem Aalmani</p>
+                                    <div class="course-progress">
+                                        <div class="progress-text">Progress: 45%</div>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 45%"></div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="continue-btn">Continue Learning</a>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-image" style="background-color: #FF9800;">
+                                    <span class="icon">🎨</span>
+                                </div>
+                                <div class="course-details">
+                                    <h4>UI/UX Design Principles</h4>
+                                    <p>Instructor: Engr. Kainat Memon</p>
+                                    <div class="course-progress">
+                                        <div class="progress-text">Progress: 60%</div>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="continue-btn">Continue Learning</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Right Column: Upcoming Activities and Reminders -->
+                    <div class="right-column">
+                        <!-- Upcoming Quizzes -->
+                        <section class="upcoming-quizzes">
+                            <div class="section-header">
+                                <h3>Upcoming Quizzes</h3>
+                                <a href="#" class="view-all" data-navigate="calendar">View All</a>
+                            </div>
+                            <div class="quiz-list">
+                                <div class="quiz-item">
+                                    <div class="quiz-date">
+                                        <div class="date">15</div>
+                                        <div class="month">Jun</div>
+                                    </div>
+                                    <div class="quiz-details">
+                                        <h4>JavaScript Fundamentals</h4>
+                                        <p>Web Development Fundamentals</p>
+                                        <span class="time">10:00 AM - 11:30 AM</span>
+                                    </div>
+                                </div>
+                                <div class="quiz-item">
+                                    <div class="quiz-date">
+                                        <div class="date">18</div>
+                                        <div class="month">Jun</div>
+                                    </div>
+                                    <div class="quiz-details">
+                                        <h4>Data Visualization</h4>
+                                        <p>Data Science Essentials</p>
+                                        <span class="time">2:00 PM - 3:30 PM</span>
+                                    </div>
+                                </div>
+                                <div class="quiz-item">
+                                    <div class="quiz-date">
+                                        <div class="date">22</div>
+                                        <div class="month">Jun</div>
+                                    </div>
+                                    <div class="quiz-details">
+                                        <h4>Color Theory</h4>
+                                        <p>UI/UX Design Principles</p>
+                                        <span class="time">11:00 AM - 12:30 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Study Reminders -->
+                        <section class="study-reminders">
+                            <div class="section-header">
+                                <h3>Study Reminders</h3>
+                                <button id="add-reminder" class="add-btn">+ Add</button>
+                            </div>
+                            <div class="reminders-list" id="reminders-container">
+                                <div class="reminder-item">
+                                    <div class="reminder-time">08:00 AM</div>
+                                    <div class="reminder-details">
+                                        <h4>Review JavaScript Concepts</h4>
+                                        <p>Daily</p>
+                                    </div>
+                                    <div class="reminder-actions">
+                                        <button class="edit-btn"><span class="icon">✏️</span></button>
+                                        <button class="delete-btn"><span class="icon">🗑️</span></button>
+                                    </div>
+                                </div>
+                                <div class="reminder-item">
+                                    <div class="reminder-time">04:30 PM</div>
+                                    <div class="reminder-details">
+                                        <h4>Practice Data Visualization</h4>
+                                        <p>Mon, Wed, Fri</p>
+                                    </div>
+                                    <div class="reminder-actions">
+                                        <button class="edit-btn"><span class="icon">✏️</span></button>
+                                        <button class="delete-btn"><span class="icon">🗑️</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Page -->
+            <div class="page-content" id="courses-page" style="display: none;">
+                <section class="page-header">
+                    <h2>My Courses</h2>
+                    <p>Manage and track all your enrolled courses</p>
+                </section>
+                
+                <div class="courses-grid">
+                    <div class="course-card-large">
+                        <div class="course-image" style="background-color: #4CAF50;">
+                            <span class="icon">💻</span>
+                        </div>
+                        <div class="course-details">
+                            <h4>Web Development Fundamentals</h4>
+                            <p>Instructor: Engr. Zaib Ul Nissa</p>
+                            <div class="course-progress">
+                                <div class="progress-text">Progress: 75%</div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="course-stats">
+                                <div class="stat">
+                                    <span class="icon">📝</span>
+                                    <span>12 Lessons</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="icon">⏱️</span>
+                                    <span>24 Hours</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="icon">🏆</span>
+                                    <span>Certificate</span>
+                                </div>
+                            </div>
+                            <a href="#" class="continue-btn">Continue Learning</a>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card-large">
+                        <div class="course-image" style="background-color: #2196F3;">
+                            <span class="icon">📊</span>
+                        </div>
+                        <div class="course-details">
+                            <h4>Data Science Essentials</h4>
+                            <p>Instructor: Engr. Faiz Nadeem Aalmani</p>
+                            <div class="course-progress">
+                                <div class="progress-text">Progress: 45%</div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            <div class="course-stats">
+                                <div class="stat">
+                                    <span class="icon">📝</span>
+                                    <span>10 Lessons</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="icon">⏱️</span>
+                                    <span>20 Hours</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="icon">🏆</span>
+                                    <span>Certificate</span>
+                                </div>
+                            </div>
+                            <a href="#" class="continue-btn">Continue Learning</a>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card-large">
+                        <div class="course-image" style="background-color: #FF9800;">
+                            <span class="icon">🎨</span>
+                        </div>
+                        <div class="course-details">
+                            <h4>UI/UX Design Principles</h4>
+                            <p>Instructor: Engr. Kainat Memon</p>
+                            <div class="course-progress">
+                                <div class="progress-text">Progress: 60%</div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="course-stats">
+                                <div class="stat">
+                                    <span class="icon">📝</span>
+                                    <span>8 Lessons</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="icon">⏱️</span>
+                                    <span>16 Hours</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="icon">🏆</span>
+                                    <span>Certificate</span>
+                                </div>
+                            </div>
+                            <a href="#" class="continue-btn">Continue Learning</a>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card-large">
+                        <div class="course-image" style="background-color: #9C27B0;">
+                            <span class="icon">🧠</span>
+                        </div>
+                        <div class="course-details">
+                            <h4>Machine Learning Fundamentals</h4>
+                            <p>Instructor: Dr. Ahsan Ansari</p>
+                            <div class="course-progress">
+                                <div class="progress-text">Progress: 30%</div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <div class="course-stats">
+                                <div class="stat">
+                                    <span class="icon">📝</span>
+                                    <span>15 Lessons</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="icon">⏱️</span>
+                                    <span>30 Hours</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="icon">🏆</span>
+                                    <span>Certificate</span>
+                                </div>
+                            </div>
+                            <a href="#" class="continue-btn">Continue Learning</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Page -->
+            <div class="page-content" id="calendar-page" style="display: none;">
+                <section class="page-header">
+                    <h2>Calendar</h2>
+                    <p>Manage your schedule and upcoming events</p>
+                </section>
+                
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="calendar-nav-btn"><span class="icon">◀</span></button>
+                        <h3>June 2025</h3>
+                        <button class="calendar-nav-btn"><span class="icon">▶</span></button>
+                    </div>
+                    
+                    <div class="calendar-weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    
+                    <div class="calendar-days">
+                        <div class="prev-month">28</div>
+                        <div class="prev-month">29</div>
+                        <div class="prev-month">30</div>
+                        <div class="prev-month">31</div>
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div>7</div>
+                        <div>8</div>
+                        <div>9</div>
+                        <div>10</div>
+                        <div>11</div>
+                        <div>12</div>
+                        <div>13</div>
+                        <div>14</div>
+                        <div class="has-event">15</div>
+                        <div>16</div>
+                        <div>17</div>
+                        <div class="has-event">18</div>
+                        <div>19</div>
+                        <div>20</div>
+                        <div>21</div>
+                        <div class="has-event">22</div>
+                        <div>23</div>
+                        <div>24</div>
+                        <div>25</div>
+                        <div>26</div>
+                        <div>27</div>
+                        <div>28</div>
+                        <div>29</div>
+                        <div>30</div>
+                        <div class="next-month">1</div>
+                        <div class="next-month">2</div>
+                        <div class="next-month">3</div>
+                        <div class="next-month">4</div>
+                        <div class="next-month">5</div>
+                    </div>
+                </div>
+                
+                <div class="upcoming-events">
+                    <h3>Upcoming Events</h3>
+                    <div class="event-list">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <div class="date">15</div>
+                                <div class="month">Jun</div>
+                            </div>
+                            <div class="event-details">
+                                <h4>JavaScript Fundamentals Quiz</h4>
+                                <p>10:00 AM - 11:30 AM</p>
+                                <span class="event-location">Web Development Fundamentals</span>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <div class="date">18</div>
+                                <div class="month">Jun</div>
+                            </div>
+                            <div class="event-details">
+                                <h4>Data Visualization Quiz</h4>
+                                <p>2:00 PM - 3:30 PM</p>
+                                <span class="event-location">Data Science Essentials</span>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <div class="date">22</div>
+                                <div class="month">Jun</div>
+                            </div>
+                            <div class="event-details">
+                                <h4>Color Theory Quiz</h4>
+                                <p>11:00 AM - 12:30 PM</p>
+                                <span class="event-location">UI/UX Design Principles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications Page -->
+            <div class="page-content" id="notifications-page" style="display: none;">
+                <section class="page-header">
+                    <h2>Notifications</h2>
+                    <p>Stay updated with your course activities</p>
+                </section>
+                
+                <div class="notifications-container">
+                    <div class="notification-item unread">
+                        <div class="notification-icon" style="background-color: #4CAF50;">
+                            <span class="icon">📝</span>
+                        </div>
+                        <div class="notification-content">
+                            <h4>New Assignment Posted</h4>
+                            <p>A new assignment "JavaScript DOM Manipulation" has been posted in Web Development Fundamentals.</p>
+                            <span class="notification-time">2 hours ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="mark-read-btn"><span class="icon">✓</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item unread">
+                        <div class="notification-icon" style="background-color: #2196F3;">
+                            <span class="icon">💬</span>
+                        </div>
+                        <div class="notification-content">
+                            <h4>New Comment on Your Discussion</h4>
+                            <p>Sarah Johnson commented on your discussion post in Data Science Essentials.</p>
+                            <span class="notification-time">5 hours ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="mark-read-btn"><span class="icon">✓</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item unread">
+                        <div class="notification-icon" style="background-color: #FF9800;">
+                            <span class="icon">🏆</span>
+                        </div>
+                        <div class="notification-content">
+                            <h4>Achievement Unlocked</h4>
+                            <p>You've completed 10 lessons in UI/UX Design Principles. Keep up the good work!</p>
+                            <span class="notification-time">1 day ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="mark-read-btn"><span class="icon">✓</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item">
+                        <div class="notification-icon" style="background-color: #9C27B0;">
+                            <span class="icon">📅</span>
+                        </div>
+                        <div class="notification-content">
+                            <h4>Upcoming Quiz Reminder</h4>
+                            <p>Don't forget about your JavaScript Fundamentals quiz on June 15th.</p>
+                            <span class="notification-time">2 days ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="delete-notification-btn"><span class="icon">🗑️</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item">
+                        <div class="notification-icon" style="background-color: #E91E63;">
+                            <span class="icon">📚</span>
+                        </div>
+                        <div class="notification-content">
+                            <h4>New Course Available</h4>
+                            <p>A new course "Advanced React Development" is now available. Check it out!</p>
+                            <span class="notification-time">3 days ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="delete-notification-btn"><span class="icon">🗑️</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Page -->
+            <div class="page-content" id="settings-page" style="display: none;">
+                <section class="page-header">
+                    <h2>Settings</h2>
+                    <p>Manage your account preferences</p>
+                </section>
+                
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h3>Account Settings</h3>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" value="Ghulam Akbar">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" value="jamaliakbar909@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" value="********">
+                            </div>
+                            <button type="submit" class="save-btn">Save Changes</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h3>Notification Preferences</h3>
+                        <div class="settings-options">
+                            <div class="setting-option">
+                                <div class="option-label">
+                                    <h4>Email Notifications</h4>
+                                    <p>Receive email notifications for course updates</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-option">
+                                <div class="option-label">
+                                    <h4>Assignment Reminders</h4>
+                                    <p>Receive reminders for upcoming assignments</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-option">
+                                <div class="option-label">
+                                    <h4>Discussion Notifications</h4>
+                                    <p>Receive notifications for discussion replies</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-option">
+                                <div class="option-label">
+                                    <h4>Course Recommendations</h4>
+                                    <p>Receive recommendations for new courses</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h3>Theme Preferences</h3>
+                        <div class="theme-options">
+                            <div class="theme-option">
+                                <input type="radio" id="light-theme" name="theme" value="light" checked>
+                                <label for="light-theme">
+                                    <div class="theme-preview light-preview"></div>
+                                    <span>Light Theme</span>
+                                </label>
+                            </div>
+                            <div class="theme-option">
+                                <input type="radio" id="dark-theme" name="theme" value="dark">
+                                <label for="dark-theme">
+                                    <div class="theme-preview dark-preview"></div>
+                                    <span>Dark Theme</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Adding Reminders -->
+    <div id="reminder-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add Study Reminder</h3>
+            <form id="reminder-form">
+                <div class="form-group">
+                    <label for="reminder-title">Title</label>
+                    <input type="text" id="reminder-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminder-time">Time</label>
+                    <input type="time" id="reminder-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminder-days">Days</label>
+                    <select id="reminder-days" required>
+                        <option value="Daily">Daily</option>
+                        <option value="Weekdays">Weekdays</option>
+                        <option value="Weekends">Weekends</option>
+                        <option value="Mon, Wed, Fri">Mon, Wed, Fri</option>
+                        <option value="Tue, Thu">Tue, Thu</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Add Reminder</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Profile Photo Upload -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Update Profile Photo</h3>
+            <div class="upload-container">
+                <div class="preview-container">
+                    <img id="preview-image" src="https://via.placeholder.com/150" alt="Preview">
+                </div>
+                <input type="file" id="profile-upload" accept="image/*">
+                <label for="profile-upload" class="upload-btn">Choose File</label>
+            </div>
+            <button id="save-profile" class="submit-btn">Save Photo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
