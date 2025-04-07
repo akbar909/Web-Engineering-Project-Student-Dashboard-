@@ -69,6 +69,10 @@ button {
     margin-right: 8px;
 }
 
+.dark-theme .icon {
+    color: white;
+}
+
 /* Dashboard Layout */
 .dashboard-container {
     display: flex;
@@ -112,7 +116,8 @@ button {
     cursor: pointer;
 }
 
-.nav-menu ul li:hover, .nav-menu ul li.active {
+.nav-menu ul li:hover,
+.nav-menu ul li.active {
     background-color: var(--hover-bg);
 }
 
@@ -555,7 +560,8 @@ button {
     gap: 10px;
 }
 
-.edit-btn, .delete-btn {
+.edit-btn,
+.delete-btn {
     color: var(--text-secondary);
     transition: color 0.2s ease;
 }
@@ -852,7 +858,8 @@ button {
     font-weight: 500;
 }
 
-.form-group input, .form-group select {
+.form-group input,
+.form-group select {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--border-color);
@@ -861,7 +868,8 @@ button {
     color: var(--text-color);
 }
 
-.save-btn, .submit-btn {
+.save-btn,
+.submit-btn {
     background-color: var(--primary-color);
     color: white;
     padding: 10px 15px;
@@ -871,7 +879,8 @@ button {
     transition: background-color 0.2s ease;
 }
 
-.save-btn:hover, .submit-btn:hover {
+.save-btn:hover,
+.submit-btn:hover {
     background-color: var(--secondary-color);
 }
 
@@ -940,11 +949,11 @@ button {
     border-radius: 50%;
 }
 
-input:checked + .toggle-slider {
+input:checked+.toggle-slider {
     background-color: var(--primary-color);
 }
 
-input:checked + .toggle-slider:before {
+input:checked+.toggle-slider:before {
     transform: translateX(26px);
 }
 
@@ -989,7 +998,7 @@ input:checked + .toggle-slider:before {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-input[type="radio"]:checked + label .theme-preview {
+input[type="radio"]:checked+label .theme-preview {
     border-color: var(--primary-color);
 }
 
@@ -1074,7 +1083,7 @@ input[type="radio"]:checked + label .theme-preview {
     .stats-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .courses-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1084,27 +1093,27 @@ input[type="radio"]:checked + label .theme-preview {
     .sidebar {
         transform: translateX(-100%);
     }
-    
+
     .main-content {
         margin-left: 0;
     }
-    
+
     .mobile-toggle {
         display: block;
     }
-    
+
     .sidebar.active {
         transform: translateX(0);
     }
-    
+
     .two-column-layout {
         grid-template-columns: 1fr;
     }
-    
+
     .search-bar {
         width: 200px;
     }
-    
+
     .courses-grid {
         grid-template-columns: 1fr;
     }
@@ -1114,20 +1123,20 @@ input[type="radio"]:checked + label .theme-preview {
     .stats-container {
         grid-template-columns: 1fr;
     }
-    
+
     .course-card {
         flex-direction: column;
     }
-    
+
     .course-image {
         width: 100%;
         height: 80px;
     }
-    
+
     .search-bar {
         display: none;
     }
-    
+
     .theme-options {
         flex-direction: column;
     }
